@@ -58,16 +58,32 @@
 		6B07DBF921025486003CA7E9 /* Trivia Game Ios */ = {
 			isa = PBXGroup;
 			children = (
+				6BD81D1321065EB900798EFE /* storyboards */,
+				6BD81D1221065D8800798EFE /* view controllers */,
 				6B07DBFA21025486003CA7E9 /* AppDelegate.swift */,
-				6BD81D0E21064EA400798EFE /* AddNewQuestionsViewController.swift */,
-				6B07DBFC21025486003CA7E9 /* quizViewController.swift */,
-				6B07DBFE21025486003CA7E9 /* Main.storyboard */,
 				6B07DC0121025488003CA7E9 /* Assets.xcassets */,
-				6B07DC0321025488003CA7E9 /* LaunchScreen.storyboard */,
 				6B07DC0621025488003CA7E9 /* Info.plist */,
 				6BD81D102106542E00798EFE /* TriviaQuestion.swift */,
 			);
 			path = "Trivia Game Ios";
+			sourceTree = "<group>";
+		};
+		6BD81D1221065D8800798EFE /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6BD81D0E21064EA400798EFE /* AddNewQuestionsViewController.swift */,
+				6B07DBFC21025486003CA7E9 /* quizViewController.swift */,
+			);
+			path = "view controllers";
+			sourceTree = "<group>";
+		};
+		6BD81D1321065EB900798EFE /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6B07DC0321025488003CA7E9 /* LaunchScreen.storyboard */,
+				6B07DBFE21025486003CA7E9 /* Main.storyboard */,
+			);
+			path = storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
