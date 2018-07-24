@@ -9,7 +9,7 @@
 import UIKit
 
 class quizViewController: UIViewController {
-
+    
     
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var answerButton1: UIButton!
@@ -42,31 +42,56 @@ class quizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    let newQuestion = TriviaQuestion(question: "what color is the sky", answers: ["red", "mauve", "aubregine", "blue"], correctAnswerIndex: 3)
-    
-       currentQuestion = newQuestion
+        let newQuestion = TriviaQuestion(question: "what color is the sky", answers: ["red", "mauve", "aubregine", "blue"], correctAnswerIndex: 3)
+        
+        currentQuestion = newQuestion
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func answerButton1(_ sender: UIButton) {
-        print(sender.tag)
+    
+    func showCorrectAnswerAlert() {
+        let alertController = UIAlertController(title: "Correct", message: "\(currentQuestion.correctanswer) is the correct answer. Good job", preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "Thank You!", style: .default) { action in
+            print("The alert action button was tapped")
+            
+        }
+        
+        
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-
-
-
-
-
-
-
-
-
-
-
-
-
+    func showIncorrectAnswer() {
+        //display an alert that the user got from the wrong answer. it should be titled "incorrect!" and the message should contain the correct answer for the question they got wrong there should also be a button/action to close the alert
+        let alertController = UIAlertController(title: "wrong", message: "\(currentQuestion.correctanswer) is the correct Answer, try again", preferredStyle: .alert)
+        
+        let alertAction = UIAlertAction(title: "Thank You", style: .default) { action in
+            print("the alert button was tapped")
+        }
+        alertController.addAction(alertAction)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
+    func checkAnswer(selectedButtonTag: Int) {
+        if selectedButtonTag == currentQuestion.correctAnswerIndex {
+            //they got it right
+            showCorrectAnswerAlert()
+            score += 1
+        } else {
+            showIncorrectAnswer()
+        }
+        
+    }
+    
+    @IBAction func answerButton1(_ sender: UIButton) {
+        checkAnswer(selectedButtonTag: sender.tag)
+    }
+    
 }
 
