@@ -92,7 +92,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Trivia Time" id="Bkq-AE-qtb">
-                        <barButtonItem key="leftBarButtonItem" title="Reset" id="qMG-2f-i3C"/>
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="qMG-2f-i3C">
+                            <connections>
+                                <action selector="resetButton:" destination="BYZ-38-t0r" id="FAc-DG-96C"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add New Question" id="22b-XH-mC9">
                             <connections>
                                 <segue destination="FKZ-Sq-XvB" kind="show" id="q9T-96-SBD"/>
